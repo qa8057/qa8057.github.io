@@ -1,0 +1,100 @@
+.grid_container{
+    display: grid;
+        /*Manually define how the grid will lay out by defining the sizes
+        of each element in a grid-like format*/
+        grid-template-areas:
+         "header header header"
+         "sidebar content ads"
+         "sidebar content ads"
+         "footer footer footer";
+        /*Main Axis*/
+        justify-content: center;
+        /*Align the text inside each grid items unless defined in grid items*/
+        text-align: center;
+        /*Define Column size for elements side by side.
+        fr is treated the same was as flex-grow.
+        repeat can paste the same column size however many you want. */
+        grid-template-columns: auto 1fr auto;
+        /*Define Row size for elements top to bottom*/
+        grid-template-rows: auto 1fr auto;
+        /*Minimum height of container*/
+        min-height: 100vh;               
+}
+.grid-item-header{
+    border: 5px solid blue;
+        /*Can define grid area to take up as much space as
+        shown in template area*/
+        grid-area: header;
+        padding: 10px;
+}
+.grid-item-sidebar{
+    border: 5px solid blue;
+        /*Can define grid area to take up as much space as
+        shown in template area*/
+        grid-area: sidebar;
+        padding: 10px;                
+}
+.grid-item-content{
+    border: 5px solid blue;
+        /*Can define grid area to take up as much space as
+        shown in template area*/
+        grid-area: content;
+        padding: 10px;                
+}
+    .grid-item-ads{
+    border: 5px solid blue;
+        /*Can define grid area to take up as much space as
+        shown in template area*/
+        grid-area: ads;
+        padding: 10px;                
+    }
+.grid-item-footer{
+    border: 5px solid blue;
+        /*Can define grid area to take up as much space as
+        shown in template area*/
+        grid-area: footer;
+        padding: 10px;                
+        position: relative;
+}
+
+/* Button styling */
+    #backToTop {
+      position: absolute;
+      bottom: 0px;
+      right: 150px;
+      width: 50px;
+      height: 50px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 9999;
+
+      /* Start hidden */
+      opacity: 0;
+      visibility: hidden;
+
+      /* Smooth fade-in/out */
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* When the class "show" is added → button appears */
+    #backToTop.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #backToTop:hover {
+      background-color: #0056b3;
+      transform: scale(1.1);
+    }
+
+    /* Just some dummy content so you can scroll */
+    body { min-height: 200vh; padding: 20px; font-family: Arial, sans-serif; }
